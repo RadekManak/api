@@ -200,6 +200,10 @@ type Condition struct {
 	// +optional
 	Severity ConditionSeverity `json:"severity,omitempty"`
 
+	// LastProbeTime is the last time we probed the condition.
+	// +optional
+	LastProbeTime metav1.Time `json:"lastProbeTime"`
+
 	// Last time the condition transitioned from one status to another.
 	// This should be when the underlying condition changed. If that is not known, then using the time when
 	// the API field changed is acceptable.

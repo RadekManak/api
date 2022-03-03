@@ -236,6 +236,10 @@ spec:
                     description: Condition defines an observation of a Machine API resource operational state.
                     type: object
                     properties:
+                      lastProbeTime:
+                        description: LastProbeTime is the last time we probed the condition.
+                        type: string
+                        format: date-time
                       lastTransitionTime:
                         description: Last time the condition transitioned from one status to another. This should be when the underlying condition changed. If that is not known, then using the time when the API field changed is acceptable.
                         type: string
