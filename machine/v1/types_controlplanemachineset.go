@@ -287,6 +287,14 @@ type AzureFailureDomain struct {
 	// If nil, the virtual machine should be deployed to no zone.
 	// +kubebuilder:validation:Required
 	Zone string `json:"zone"`
+
+	// Subnet for the virtual machine.
+	// +optional
+	Subnet string `json:"subnet,omitempty"`
+
+	// InternalLoadBalancer is a name of the internal load balancer for the virtual machine.
+	// +optional
+	InternalLoadBalancer string `json:"internalLoadBalancer,omitempty"`
 }
 
 // GCPFailureDomain configures failure domain information for the GCP platform
