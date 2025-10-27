@@ -41072,6 +41072,13 @@ func schema_openshift_api_machine_v1beta1_MachineSetStatus(ref common.ReferenceC
 							Format:      "",
 						},
 					},
+					"synchronizedAPI": {
+						SchemaProps: spec.SchemaProps{
+							Description: "synchronizedAPI represents the API that is currently in sync with the state of the resource. It is used to determine the source API of the migration. When a migration begins, `status.synchronizedAPI` is set to the value of the `status.authoritativeAPI` before it transitions to \"Migrating\". An empty value indicates that the resource has not yet been reconciled by the migration controller.",
+							Type:        []string{"string"},
+							Format:      "",
+						},
+					},
 					"synchronizedGeneration": {
 						SchemaProps: spec.SchemaProps{
 							Description: "synchronizedGeneration is the generation of the authoritative resource that the non-authoritative resource is synchronised with. This field is set when the authoritative resource is updated and the sync controller has updated the non-authoritative resource to match.",
@@ -41262,6 +41269,13 @@ func schema_openshift_api_machine_v1beta1_MachineStatus(ref common.ReferenceCall
 							Description: "synchronizedGeneration is the generation of the authoritative resource that the non-authoritative resource is synchronised with. This field is set when the authoritative resource is updated and the sync controller has updated the non-authoritative resource to match.",
 							Type:        []string{"integer"},
 							Format:      "int64",
+						},
+					},
+					"synchronizedAPI": {
+						SchemaProps: spec.SchemaProps{
+							Description: "synchronizedAPI represents the API that is currently in sync with the state of the resource. It is used to determine the source API of the migration. When a migration begins, `status.synchronizedAPI` is set to the value of the `status.authoritativeAPI` before it transitions to \"Migrating\". An empty value indicates that the resource has not yet been reconciled by the migration controller.",
+							Type:        []string{"string"},
+							Format:      "",
 						},
 					},
 				},
